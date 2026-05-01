@@ -1,0 +1,734 @@
+// ════════════════════════════════════════════════════════════
+// LinearB Support Portal — Custom Styles
+// Built on Copenhagen. Core files untouched.
+//
+// Color palette matches the existing portal screenshots:
+//   Purple hero  #2D2540  (also used for card icons, search btn)
+//   Teal heading #4ECDC4  (hero H1, hover accents)
+//   Teal dark    #17494D  (links, nav CTA)
+//   White        #FFFFFF  (cards, header, content)
+//   Gray border  #E2E8E8
+// ════════════════════════════════════════════════════════════
+
+$lb-purple:     #2D2540;
+$lb-purple-mid: #3a3057;
+$lb-teal:       #4ECDC4;
+$lb-teal-dark:  #17494D;
+$lb-white:      #FFFFFF;
+$lb-gray-50:    #F7F8F8;
+$lb-gray-100:   #F0F2F2;
+$lb-gray-200:   #E2E8E8;
+$lb-gray-400:   #9EACAC;
+$lb-gray-500:   #6B7B7B;
+$lb-gray-700:   #3D4C4C;
+$lb-text:       #2C3333;
+
+$lb-info-bg:  #E8F4FD; $lb-info-b:  #2E86C1; $lb-info-t:  #1A5276;
+$lb-warn-bg:  #FEF9E7; $lb-warn-b:  #F39C12; $lb-warn-t:  #7D6608;
+$lb-crit-bg:  #FDEDEC; $lb-crit-b:  #E74C3C; $lb-crit-t:  #922B21;
+$lb-ok-bg:    #EAFAF1; $lb-ok-b:    #27AE60; $lb-ok-t:    #1D6A34;
+
+// ─── 1. ALERT BANNER ────────────────────────────────────────
+.lb-alert-banner {
+  display: none;
+  width: 100%;
+  padding: 10px 24px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  border-bottom: 3px solid transparent;
+
+  &[data-visible] { display: block; }
+
+  &__inner {
+    max-width: 1160px; margin: 0 auto;
+    display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  }
+  &__icon    { flex-shrink: 0; display: flex; align-items: center; }
+  &__message { flex: 1 1 200px; font-weight: 500; }
+  &__cta     { white-space: nowrap; font-weight: 600; text-decoration: underline; }
+  &__dismiss {
+    background: none; border: none; padding: 4px; cursor: pointer;
+    display: flex; align-items: center; opacity: .6; margin-left: auto;
+    border-radius: 3px; flex-shrink: 0;
+    &:hover { opacity: 1; background: rgba(0,0,0,.08); }
+  }
+  &--info     { background: $lb-info-bg; border-color: $lb-info-b; color: $lb-info-t; }
+  &--warning  { background: $lb-warn-bg; border-color: $lb-warn-b; color: $lb-warn-t; }
+  &--critical { background: $lb-crit-bg; border-color: $lb-crit-b; color: $lb-crit-t; }
+  &--success  { background: $lb-ok-bg;   border-color: $lb-ok-b;   color: $lb-ok-t;   }
+}
+
+// ─── 2. HEADER ──────────────────────────────────────────────
+// Keep Copenhagen's white header. Add "How to Engage" link
+// and style "Submit a request" as a teal pill button.
+.header {
+  border-bottom: 1px solid $lb-gray-200;
+}
+
+// "How to Engage with Support" nav link
+.lb-nav-support-link {
+  font-size: 13.5px;
+  color: $lb-gray-700 !important;
+  padding: 6px 10px;
+  border-radius: 4px;
+  transition: color .15s, background .15s;
+
+  &:hover {
+    color: $lb-teal-dark !important;
+    background: $lb-gray-100;
+    text-decoration: none !important;
+  }
+}
+
+// "Submit a request" → teal pill button matching portal accent
+.lb-nav-ticket-btn,
+.submit-a-request {
+  background: $lb-teal-dark !important;
+  color: $lb-white !important;
+  border-radius: 20px !important;
+  padding: 7px 18px !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  transition: background .15s !important;
+
+  &:hover {
+    background: $lb-purple !important;
+    text-decoration: none !important;
+    color: $lb-white !important;
+  }
+}
+
+// ─── 3. HERO ────────────────────────────────────────────────
+// Dark purple + banner background image (set in Guide > Images)
+// "How Can We Help?" in teal, white search bar, dark Search btn
+.hero {
+  background-color: $lb-purple;
+  background-image: url($homepage_background_image);
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 340px;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  &-inner {
+    max-width: 640px;
+    width: 100%;
+    position: relative;
+  }
+}
+
+// Teal "How Can We Help?" heading
+.lb-hero-title {
+  color: $lb-teal;
+  font-size: 34px;
+  font-weight: 700;
+  margin: 0 0 24px;
+  letter-spacing: -0.3px;
+}
+
+// Search bar wrapper — white input + dark button
+.lb-search-wrap {
+  position: relative;
+  max-width: 580px;
+  margin: 0 auto;
+
+  .lb-search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: $lb-gray-400;
+    pointer-events: none;
+    z-index: 2;
+  }
+}
+
+// Override Copenhagen search for hero context
+.hero .search {
+  display: flex;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 2px 16px rgba(0,0,0,.3);
+
+  input[type="search"],
+  .search-input {
+    flex: 1 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 14px 16px 14px 46px !important;
+    font-size: 15px !important;
+    color: $lb-text !important;
+    background: $lb-white !important;
+    box-shadow: none !important;
+    outline: none !important;
+
+    &::placeholder { color: $lb-gray-400 !important; }
+    &:focus { border: none !important; box-shadow: none !important; }
+  }
+
+  input[type="submit"],
+  .search-submit,
+  button[type="submit"] {
+    background: $lb-purple !important;
+    color: $lb-white !important;
+    border: none !important;
+    border-radius: 0 !important;
+    padding: 0 28px !important;
+    font-size: 14px !important;
+    font-weight: 600 !important;
+    cursor: pointer !important;
+    white-space: nowrap;
+    font-family: inherit !important;
+    transition: background .15s;
+
+    &:hover { background: $lb-purple-mid !important; }
+  }
+}
+
+// ─── 4. CATEGORY CARDS ──────────────────────────────────────
+// White cards with dark circle icons, overlap hero bottom edge,
+// title + description, matching original portal exactly.
+.blocks-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 0;
+  gap: 0;
+  margin: -28px 0 0;
+  position: relative;
+  z-index: 5;
+  border: 1px solid $lb-gray-200;
+  background: $lb-white;
+}
+
+.blocks-item {
+  background: $lb-white;
+  border-radius: 0;
+  border: none;
+  border-right: 1px solid $lb-gray-200;
+  flex: 1 0 260px;
+  max-width: 380px;
+  text-align: center;
+  transition: box-shadow .18s;
+
+  &:last-child { border-right: none; }
+
+  &:hover,
+  &:focus-within {
+    box-shadow: 0 4px 24px rgba(0,0,0,.10);
+    position: relative;
+    z-index: 6;
+    .blocks-item-title { color: $lb-teal-dark; }
+  }
+}
+
+.blocks-item-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 44px 28px 36px;
+  color: $lb-text;
+  text-decoration: none;
+
+  &:hover, &:visited, &:active { text-decoration: none; color: $lb-text; }
+}
+
+// Dark circle icon — matches portal's dark book-icon circles
+.blocks-item-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: $lb-purple;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+
+  svg { stroke: $lb-white; width: 22px; height: 22px; }
+}
+
+.blocks-item-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: $lb-text;
+  margin: 0 0 10px;
+  transition: color .18s;
+}
+
+.blocks-item-description {
+  font-size: 14px;
+  color: $lb-gray-500;
+  line-height: 1.65;
+  margin: 0;
+}
+
+// ─── 5. STATUS BAR ──────────────────────────────────────────
+.lb-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 9px 14px;
+  background: $lb-gray-50;
+  border: 1px solid $lb-gray-200;
+  border-radius: 6px;
+  margin: 24px 0 8px;
+  font-size: 13px;
+
+  &__indicator   { display: flex; align-items: center; gap: 7px; font-weight: 600; }
+  &__indicator--operational { color: $lb-ok-t; }
+  &__indicator--degraded    { color: $lb-warn-t; }
+  &__indicator--outage      { color: $lb-crit-t; }
+
+  &__dot {
+    width: 9px; height: 9px; border-radius: 50%; flex-shrink: 0;
+    animation: lb-pulse 2.5s ease-in-out infinite;
+  }
+  &__indicator--operational .lb-status-bar__dot { background: #27AE60; }
+  &__indicator--degraded    .lb-status-bar__dot { background: #F39C12; }
+  &__indicator--outage      .lb-status-bar__dot { background: #E74C3C; }
+
+  &__link {
+    display: inline-flex; align-items: center; gap: 5px;
+    color: $lb-teal-dark; font-weight: 500;
+    &:hover { text-decoration: underline; }
+  }
+}
+
+@keyframes lb-pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: .5; transform: scale(1.3); }
+}
+
+// ─── 6. PROMOTED + RECENT ARTICLES (2-col) ──────────────────
+.lb-articles-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  border: 1px solid $lb-gray-200;
+  margin-top: 36px;
+
+  @media (max-width: 768px) { grid-template-columns: 1fr; }
+}
+
+.lb-articles-col {
+  padding: 28px 32px;
+
+  & + & { border-left: 1px solid $lb-gray-200; }
+}
+
+.lb-articles-heading {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 18px;
+  font-weight: 700;
+  color: $lb-text;
+  margin: 0 0 16px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid $lb-gray-200;
+
+  svg { color: $lb-gray-400; flex-shrink: 0; }
+}
+
+.lb-article-list {
+  list-style: none; padding: 0; margin: 0;
+}
+
+.lb-article-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 10px 0;
+  border-bottom: 1px solid $lb-gray-200;
+
+  &:last-child { border-bottom: 0; }
+
+  svg { flex-shrink: 0; margin-top: 2px; color: $lb-gray-400; }
+
+  a {
+    font-size: 14px;
+    color: $lb-text;
+    line-height: 1.45;
+    &:hover { color: $lb-teal-dark; text-decoration: underline; }
+  }
+}
+
+// ════════════════════════════════════════════════════════════
+// SUPPORT ENGAGEMENT ARTICLE COMPONENTS
+// All styles below are used only in the "How to Engage" article.
+// ════════════════════════════════════════════════════════════
+
+// ─── 7. SUPPORT PAGE LAYOUT ─────────────────────────────────
+.lb-support-page {
+  max-width: 1000px;
+}
+
+.lb-support-page__header {
+  padding: 24px 0 28px;
+  border-bottom: 2px solid $lb-gray-200;
+  margin-bottom: 32px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.lb-support-page__title {
+  font-size: 26px;
+  font-weight: 800;
+  color: $lb-purple;
+  margin: 0 0 10px;
+  flex-basis: 100%;
+}
+
+.lb-support-page__intro {
+  font-size: 15px;
+  color: $lb-gray-700;
+  line-height: 1.7;
+  flex: 1 1 400px;
+  margin: 0;
+}
+
+.lb-support-page__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: $lb-teal-dark;
+  color: $lb-white;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 10px 22px;
+  border-radius: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
+  transition: background .15s;
+
+  &:hover { background: $lb-purple; text-decoration: none; color: $lb-white; }
+  svg { flex-shrink: 0; }
+}
+
+// ─── 8. SIDEBAR + CONTENT LAYOUT ────────────────────────────
+.lb-support-layout {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 40px;
+  align-items: start;
+
+  @media (max-width: 768px) {
+    grid-template-columns: 1fr;
+    .lb-support-nav { position: static; }
+  }
+}
+
+// Sticky sidebar nav
+.lb-support-nav {
+  position: sticky;
+  top: 80px;
+  background: $lb-gray-50;
+  border: 1px solid $lb-gray-200;
+  border-radius: 8px;
+  padding: 20px;
+
+  &__heading {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .8px;
+    color: $lb-gray-400;
+    margin-bottom: 12px;
+  }
+
+  &__list { list-style: none; padding: 0; margin: 0; }
+
+  &__link {
+    display: block;
+    font-size: 13.5px;
+    color: $lb-gray-700;
+    padding: 7px 10px;
+    border-radius: 4px;
+    margin-bottom: 2px;
+    transition: background .12s, color .12s;
+    border-left: 2px solid transparent;
+
+    &:hover {
+      background: $lb-gray-100;
+      color: $lb-teal-dark;
+      text-decoration: none;
+    }
+
+    &--active {
+      color: $lb-teal-dark;
+      font-weight: 600;
+      border-left-color: $lb-teal-dark;
+      background: rgba($lb-teal, .06);
+    }
+  }
+
+  &__divider {
+    border-top: 1px solid $lb-gray-200;
+    margin: 16px 0;
+  }
+
+  &__ticket-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    background: $lb-teal-dark;
+    color: $lb-white;
+    font-weight: 700;
+    font-size: 13px;
+    padding: 9px 14px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    transition: background .15s;
+    text-decoration: none;
+
+    &:hover { background: $lb-purple; text-decoration: none; color: $lb-white; }
+    svg { flex-shrink: 0; }
+  }
+
+  &__tickets-link {
+    display: block;
+    text-align: center;
+    font-size: 12.5px;
+    color: $lb-gray-500;
+    padding: 4px;
+    transition: color .15s;
+
+    &:hover { color: $lb-teal-dark; text-decoration: underline; }
+  }
+}
+
+// ─── 9. CONTENT SECTIONS ────────────────────────────────────
+.lb-support-content { min-width: 0; }
+
+.lb-support-section {
+  padding-bottom: 36px;
+  margin-bottom: 36px;
+  border-bottom: 1px solid $lb-gray-200;
+
+  &:last-child { border-bottom: 0; }
+
+  p { font-size: 14.5px; color: $lb-gray-700; line-height: 1.7; margin: 0 0 14px; }
+  p:last-child { margin-bottom: 0; }
+}
+
+.lb-support-section__title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 20px;
+  font-weight: 700;
+  color: $lb-purple;
+  margin: 0 0 16px;
+}
+
+.lb-support-section__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 8px;
+  background: rgba($lb-purple, .08);
+  flex-shrink: 0;
+
+  svg { stroke: $lb-purple; }
+
+  &--warn {
+    background: rgba($lb-warn-b, .12);
+    svg { stroke: darken($lb-warn-b, 8%); }
+  }
+}
+
+// Support checklist
+.lb-support-checklist {
+  list-style: none;
+  padding: 0;
+  margin: 12px 0 16px;
+
+  li {
+    font-size: 14px;
+    color: $lb-gray-700;
+    padding: 6px 0 6px 22px;
+    position: relative;
+    border-bottom: 1px solid $lb-gray-200;
+    line-height: 1.55;
+
+    &:last-child { border-bottom: 0; }
+
+    &::before {
+      content: '→';
+      position: absolute;
+      left: 0;
+      color: $lb-teal-dark;
+      font-weight: 700;
+      font-size: 12px;
+      top: 8px;
+    }
+  }
+}
+
+// Hours badge
+.lb-hours-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: $lb-gray-50;
+  border: 1px solid $lb-gray-200;
+  border-left: 3px solid $lb-teal-dark;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  font-size: 14px;
+  color: $lb-gray-700;
+  line-height: 1.55;
+  margin: 12px 0 14px;
+
+  svg { stroke: $lb-teal-dark; flex-shrink: 0; }
+  strong { color: $lb-text; }
+}
+
+// ─── 10. CALLOUT BOXES ──────────────────────────────────────
+.lb-callout {
+  border-left: 4px solid;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin: 14px 0;
+  font-size: 14px;
+  line-height: 1.6;
+
+  &--info     { background: $lb-info-bg; border-color: $lb-info-b; color: $lb-info-t; }
+  &--warning  { background: $lb-warn-bg; border-color: $lb-warn-b; color: $lb-warn-t; }
+  &--critical { background: $lb-crit-bg; border-color: $lb-crit-b; color: $lb-crit-t; }
+  &--success  { background: $lb-ok-bg;   border-color: $lb-ok-b;   color: $lb-ok-t;   }
+
+  strong {
+    display: block;
+    font-size: 11.5px;
+    text-transform: uppercase;
+    letter-spacing: .5px;
+    margin-bottom: 4px;
+    opacity: .8;
+  }
+}
+
+// ─── 11. SLA TABLE ──────────────────────────────────────────
+.lb-sla-section {
+  background: $lb-white;
+  border: 1px solid $lb-gray-200;
+  border-radius: 6px;
+  overflow: hidden;
+  margin: 20px 0;
+
+  &__header {
+    display: flex; align-items: flex-start; justify-content: space-between;
+    flex-wrap: wrap; gap: 12px;
+    padding: 18px 20px 16px;
+    border-bottom: 1px solid $lb-gray-200;
+    background: $lb-gray-50;
+  }
+  &__title    { font-size: 16px; font-weight: 700; color: $lb-text; margin: 0 0 3px; }
+  &__subtitle { font-size: 13px; color: $lb-gray-500; margin: 0; }
+}
+
+.lb-sla-hours-badge {
+  display: flex; align-items: flex-start; gap: 8px;
+  background: $lb-white; border: 1px solid $lb-gray-200;
+  border-radius: 5px; padding: 8px 12px;
+  font-size: 12px; color: $lb-gray-700; line-height: 1.5; flex-shrink: 0;
+  svg { stroke: $lb-teal-dark; margin-top: 1px; flex-shrink: 0; }
+  strong { color: $lb-text; }
+}
+
+.lb-sla-table-wrap { overflow-x: auto; }
+
+.lb-sla-table {
+  width: 100%; border-collapse: collapse; font-size: 13px;
+
+  &--full th, &--full td { padding: 11px 14px; }
+
+  th {
+    background: $lb-gray-50;
+    text-align: left; font-weight: 700; font-size: 11px;
+    color: $lb-gray-500; text-transform: uppercase; letter-spacing: .5px;
+    border-bottom: 2px solid $lb-gray-200;
+  }
+  td {
+    border-top: 1px solid $lb-gray-200;
+    color: $lb-gray-700; vertical-align: top; line-height: 1.5;
+  }
+  tr:hover td { background: rgba($lb-teal, .04); }
+
+  &__col-plan {
+    text-align: center; background: $lb-purple; color: $lb-white;
+    border-bottom: 2px solid darken($lb-purple, 8%);
+  }
+  &__col-plan-sub {
+    text-align: center; white-space: nowrap;
+    background: rgba($lb-teal, .08); color: $lb-teal-dark;
+    border-bottom: 2px solid $lb-gray-200; font-weight: 700;
+  }
+  &__col-note {
+    display: block; font-weight: 400; font-size: 10.5px;
+    text-transform: none; letter-spacing: 0; opacity: .7;
+  }
+  &__sla-type {
+    font-size: 11px; font-weight: 700; color: $lb-gray-400;
+    white-space: nowrap; text-transform: uppercase; letter-spacing: .4px;
+  }
+  &__val {
+    text-align: center; font-weight: 700;
+    color: $lb-text; font-size: 13px; white-space: nowrap;
+  }
+  &__update-row td {
+    border-top: 1px dashed $lb-gray-200;
+    background: rgba($lb-gray-50, .5);
+  }
+  &__severity-start > td { border-top: 2px solid $lb-gray-200; }
+}
+
+.lb-priority {
+  display: inline-block; padding: 3px 9px; border-radius: 10px;
+  font-size: 10.5px; font-weight: 700; letter-spacing: .2px;
+  white-space: nowrap; line-height: 1.6;
+
+  &--critical { background: $lb-crit-bg; color: $lb-crit-t; border: 1px solid rgba($lb-crit-b, .25); }
+  &--high     { background: $lb-warn-bg; color: $lb-warn-t; border: 1px solid rgba($lb-warn-b, .25); }
+  &--normal   { background: $lb-info-bg; color: $lb-info-t; border: 1px solid rgba($lb-info-b, .25); }
+  &--low      { background: $lb-gray-100; color: $lb-gray-500; border: 1px solid $lb-gray-200; }
+}
+
+.lb-sla-footer-note {
+  padding: 11px 20px; font-size: 11.5px;
+  color: $lb-gray-500; font-style: italic;
+  border-top: 1px solid $lb-gray-200;
+  background: $lb-gray-50; margin: 0;
+}
+
+// ─── 12. STATUS EMBED (for articles) ────────────────────────
+.lb-status-embed {
+  &__title { font-size: 16px; font-weight: 700; color: $lb-text; margin: 0 0 12px; }
+  &__components { border: 1px solid $lb-gray-200; border-radius: 6px; overflow: hidden; }
+  &__component {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 10px 14px; border-bottom: 1px solid $lb-gray-200;
+    &:last-child { border-bottom: 0; }
+  }
+  &__component-name   { font-weight: 500; color: $lb-text; font-size: 13.5px; }
+  &__component-status {
+    font-size: 11px; font-weight: 700; padding: 3px 9px; border-radius: 10px;
+    &--operational { background: $lb-ok-bg;   color: $lb-ok-t;   }
+    &--degraded    { background: $lb-warn-bg;  color: $lb-warn-t; }
+    &--outage      { background: $lb-crit-bg;  color: $lb-crit-t; }
+    &--maintenance { background: $lb-info-bg;  color: $lb-info-t; }
+  }
+}

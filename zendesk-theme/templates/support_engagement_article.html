@@ -1,0 +1,241 @@
+<!--
+  HOW TO ENGAGE WITH LINEARB SUPPORT
+  ====================================
+  INSTRUCTIONS FOR ZENDESK GUIDE ADMINS:
+  1. Go to Guide Admin → Knowledge Base → Add Article
+  2. Title: "How to Engage with LinearB Support"
+  3. Switch editor to HTML source mode (</> icon)
+  4. Paste everything between the START and END markers below
+  5. Set article as "Promoted" so it appears on the home page
+  6. Add it to a section e.g. "Working with Support"
+  7. Publish
+-->
+
+<!-- ══ START PASTE ══════════════════════════════════════════ -->
+<div class="lb-support-page">
+
+  <!-- PAGE HEADER -->
+  <div class="lb-support-page__header">
+    <h1 class="lb-support-page__title">How to Engage with LinearB Support</h1>
+    <p class="lb-support-page__intro">All support requests must be submitted through this Zendesk portal. Issues reported only via email or mentioned during live working sessions will not be tracked as formal break/fix tickets and may not receive a timely response.</p>
+    <a href="/hc/requests/new" class="lb-support-page__cta">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      Open a Support Ticket
+    </a>
+  </div>
+
+  <!-- SIDE NAV + CONTENT LAYOUT -->
+  <div class="lb-support-layout">
+
+    <!-- STICKY SIDEBAR NAV -->
+    <nav class="lb-support-nav" aria-label="On this page">
+      <div class="lb-support-nav__heading">On this page</div>
+      <ul class="lb-support-nav__list">
+        <li><a href="#submit-ticket" class="lb-support-nav__link lb-support-nav__link--active">Submit a Ticket</a></li>
+        <li><a href="#what-we-need" class="lb-support-nav__link">What We Need From You</a></li>
+        <li><a href="#support-hours" class="lb-support-nav__link">Support Hours</a></li>
+        <li><a href="#your-role" class="lb-support-nav__link">Your Role</a></li>
+        <li><a href="#response-times" class="lb-support-nav__link">Response Times</a></li>
+      </ul>
+      <div class="lb-support-nav__divider"></div>
+      <a href="/hc/requests/new" class="lb-support-nav__ticket-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+        Open a Ticket
+      </a>
+      <a href="/hc/requests" class="lb-support-nav__tickets-link">View My Tickets</a>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <div class="lb-support-content">
+
+      <!-- SUBMIT A TICKET -->
+      <section class="lb-support-section" id="submit-ticket">
+        <h2 class="lb-support-section__title">
+          <span class="lb-support-section__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+          </span>
+          Submit a Ticket — The Only Channel
+        </h2>
+        <p>Every break/fix issue must have a Zendesk ticket. This is the only channel through which LinearB Customer Support will formally track, triage, and resolve your requests against SLA commitments.</p>
+        <div class="lb-callout lb-callout--info">
+          <strong>Note</strong>
+          Your CSA (Customer Solutions Architect) and CSM (Customer Success Manager) are not responsible for the day-to-day tracking, triage, or resolution of break/fix tickets. While your CSM might mention the status of high-priority items in a weekly report, ticket ownership stays with LinearB Customer Support and you.
+        </div>
+      </section>
+
+      <!-- WHAT WE NEED -->
+      <section class="lb-support-section" id="what-we-need">
+        <h2 class="lb-support-section__title">
+          <span class="lb-support-section__icon lb-support-section__icon--warn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </span>
+          What We Need From You
+        </h2>
+        <p>To help us triage and resolve the issue quickly, we rely on you providing enough detail when you submit the ticket. Please include everything relevant to the problem, such as:</p>
+        <ul class="lb-support-checklist">
+          <li>Screenshots or screen recordings</li>
+          <li>Browser console output</li>
+          <li>Affected URLs</li>
+          <li>Links to Pull Requests or Merge Requests</li>
+          <li>Project management ticket IDs</li>
+          <li>Affected user identifiers</li>
+          <li>A clear description of what you expected to happen versus what you actually observed</li>
+        </ul>
+        <div class="lb-callout lb-callout--warning">
+          <strong>Important</strong>
+          If we have to ask for missing information, our official response timeline (SLA) will be paused until you provide those details in the Zendesk ticket.
+        </div>
+      </section>
+
+      <!-- SUPPORT HOURS -->
+      <section class="lb-support-section" id="support-hours">
+        <h2 class="lb-support-section__title">
+          <span class="lb-support-section__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          </span>
+          Our Support Hours
+        </h2>
+        <p>All response times are measured during our standard business hours:</p>
+        <div class="lb-hours-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+          <span><strong>9:00 AM – 5:00 PM U.S. Eastern Time</strong>, business days, excluding LinearB holidays</span>
+        </div>
+        <p>Time outside these hours does not count toward response time targets.</p>
+      </section>
+
+      <!-- YOUR ROLE -->
+      <section class="lb-support-section" id="your-role">
+        <h2 class="lb-support-section__title">
+          <span class="lb-support-section__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          </span>
+          Your Role
+        </h2>
+        <ul class="lb-support-checklist">
+          <li>You must enter all issues through the Zendesk portal. Issues reported only via email or during live working sessions will not be tracked as formal break/fix tickets and may not receive a timely response.</li>
+          <li>You are responsible for monitoring your open Zendesk tickets and responding to our requests for information.</li>
+          <li>If we need missing information, the SLA clock pauses until you respond in the ticket.</li>
+        </ul>
+      </section>
+
+      <!-- RESPONSE TIMES -->
+      <section class="lb-support-section" id="response-times">
+        <h2 class="lb-support-section__title">
+          <span class="lb-support-section__icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </span>
+          Response Times
+        </h2>
+        <p>We categorize issues into four severity levels when you submit the ticket, which our team may adjust based on observed impact.</p>
+
+        <div class="lb-sla-section">
+          <div class="lb-sla-section__header">
+            <div>
+              <div class="lb-sla-section__title">SLA by Severity &amp; Plan</div>
+              <p class="lb-sla-section__subtitle">First response and update frequency targets during business hours.</p>
+            </div>
+            <div class="lb-sla-hours-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+              <span>9am–5pm ET · Mon–Fri<br/>excl. LinearB holidays</span>
+            </div>
+          </div>
+          <div class="lb-sla-table-wrap">
+            <table class="lb-sla-table lb-sla-table--full">
+              <thead>
+                <tr>
+                  <th rowspan="2" style="width:130px">Severity</th>
+                  <th rowspan="2">Definition &amp; Examples</th>
+                  <th rowspan="2" style="width:120px">Response SLA</th>
+                  <th class="lb-sla-table__col-plan" colspan="2">Plan</th>
+                </tr>
+                <tr>
+                  <th class="lb-sla-table__col-plan-sub" style="width:140px">Essentials<br/><span class="lb-sla-table__col-note">9am–5pm EST</span></th>
+                  <th class="lb-sla-table__col-plan-sub" style="width:140px">Enterprise<br/><span class="lb-sla-table__col-note">9am–5pm EST</span></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td rowspan="2"><span class="lb-priority lb-priority--critical">Severity 1<br/>Urgent</span></td>
+                  <td rowspan="2">Business-critical operations completely halted with no existing workaround — e.g., platform outage, org-wide login issues, dashboards inaccessible.</td>
+                  <td class="lb-sla-table__sla-type">First Response</td>
+                  <td class="lb-sla-table__val">4 business hours</td>
+                  <td class="lb-sla-table__val">3 business hours</td>
+                </tr>
+                <tr class="lb-sla-table__update-row">
+                  <td class="lb-sla-table__sla-type">Update Frequency</td>
+                  <td class="lb-sla-table__val">1 business day</td>
+                  <td class="lb-sla-table__val">1 business day</td>
+                </tr>
+                <tr class="lb-sla-table__severity-start">
+                  <td rowspan="2"><span class="lb-priority lb-priority--high">Severity 2<br/>High</span></td>
+                  <td rowspan="2">Features broken or data incorrect for a large subset of users, potentially without a workaround — e.g., metrics wrong, git/PM data not loading, teams missing data.</td>
+                  <td class="lb-sla-table__sla-type">First Response</td>
+                  <td class="lb-sla-table__val">5 business hours</td>
+                  <td class="lb-sla-table__val">4 business hours</td>
+                </tr>
+                <tr class="lb-sla-table__update-row">
+                  <td class="lb-sla-table__sla-type">Update Frequency</td>
+                  <td class="lb-sla-table__val">2 business days</td>
+                  <td class="lb-sla-table__val">2 business days</td>
+                </tr>
+                <tr class="lb-sla-table__severity-start">
+                  <td rowspan="2"><span class="lb-priority lb-priority--normal">Severity 3<br/>Normal</span></td>
+                  <td rowspan="2">Limited impact with a workaround typically available — e.g., exclusion issues, single user issues, WorkerB issues.</td>
+                  <td class="lb-sla-table__sla-type">First Response</td>
+                  <td class="lb-sla-table__val">8 business hours</td>
+                  <td class="lb-sla-table__val">6 business hours</td>
+                </tr>
+                <tr class="lb-sla-table__update-row">
+                  <td class="lb-sla-table__sla-type">Update Frequency</td>
+                  <td class="lb-sla-table__val">3 business days</td>
+                  <td class="lb-sla-table__val">3 business days</td>
+                </tr>
+                <tr class="lb-sla-table__severity-start">
+                  <td rowspan="2"><span class="lb-priority lb-priority--low">Severity 4<br/>Low</span></td>
+                  <td rowspan="2">Little to no significant impact — e.g., "how-to" inquiries, minor UI inconsistencies, feature requests.</td>
+                  <td class="lb-sla-table__sla-type">First Response</td>
+                  <td class="lb-sla-table__val">1 business day</td>
+                  <td class="lb-sla-table__val">8 business hours</td>
+                </tr>
+                <tr class="lb-sla-table__update-row">
+                  <td class="lb-sla-table__sla-type">Update Frequency</td>
+                  <td class="lb-sla-table__val">5 business days</td>
+                  <td class="lb-sla-table__val">4 business days</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="lb-sla-footer-note">All response times are measured during standard business hours only. Time outside these hours does not count toward response time targets.</p>
+        </div>
+      </section>
+
+    </div><!-- /lb-support-content -->
+  </div><!-- /lb-support-layout -->
+</div><!-- /lb-support-page -->
+
+<script>
+// Sidebar nav: highlight active section on scroll
+(function() {
+  var links = document.querySelectorAll('.lb-support-nav__link');
+  var sections = Array.from(document.querySelectorAll('.lb-support-section[id]'));
+  if (!links.length || !sections.length) return;
+  function onScroll() {
+    var scrollY = window.scrollY + 120;
+    var current = sections[0].id;
+    sections.forEach(function(s) { if (scrollY >= s.offsetTop) current = s.id; });
+    links.forEach(function(l) {
+      l.classList.toggle('lb-support-nav__link--active', l.getAttribute('href') === '#' + current);
+    });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+  // Smooth scroll
+  links.forEach(function(l) {
+    l.addEventListener('click', function(e) {
+      var target = document.querySelector(l.getAttribute('href'));
+      if (target) { e.preventDefault(); target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+    });
+  });
+})();
+</script>
+<!-- ══ END PASTE ════════════════════════════════════════════ -->

@@ -1,0 +1,62 @@
+{{!--
+  STATUS PAGE TEMPLATE
+  ====================
+  This is a special article/section template that can be used as a
+  dedicated status page. Reference it via a custom page slug in Zendesk
+  Guide or embed the lb-status-embed widget in any article body.
+
+  To use as a full status page article:
+    1. Create a new article in Zendesk Guide
+    2. Place the HTML below in the article body (using HTML source mode)
+    3. Publish at /hc/articles/[id]-system-status
+
+  The JavaScript in script.js (LinearBAlerts + initStatusBar) handles
+  fetching live data from your Statuspage.io API endpoint.
+--}}
+
+<div class="lb-status-embed" id="lb-status-embed">
+  <h2 class="lb-status-embed__title">System Status</h2>
+
+  <div class="lb-status-embed__components" id="lb-status-components">
+    <!-- Populated by statusEmbedInit() in script.js if STATUS_API_URL is set -->
+    <!-- Default static content shown below — replace or remove as needed -->
+    <div class="lb-status-embed__component">
+      <span class="lb-status-embed__component-name">Core Platform</span>
+      <span class="lb-status-embed__component-status lb-status-embed__component-status--operational">Operational</span>
+    </div>
+    <div class="lb-status-embed__component">
+      <span class="lb-status-embed__component-name">Git Provider Sync (GitHub / GitLab / Bitbucket)</span>
+      <span class="lb-status-embed__component-status lb-status-embed__component-status--operational">Operational</span>
+    </div>
+    <div class="lb-status-embed__component">
+      <span class="lb-status-embed__component-name">Jira / Linear Integration</span>
+      <span class="lb-status-embed__component-status lb-status-embed__component-status--operational">Operational</span>
+    </div>
+    <div class="lb-status-embed__component">
+      <span class="lb-status-embed__component-name">Slack Notifications</span>
+      <span class="lb-status-embed__component-status lb-status-embed__component-status--operational">Operational</span>
+    </div>
+    <div class="lb-status-embed__component">
+      <span class="lb-status-embed__component-name">Analytics &amp; Reporting</span>
+      <span class="lb-status-embed__component-status lb-status-embed__component-status--operational">Operational</span>
+    </div>
+    <div class="lb-status-embed__component">
+      <span class="lb-status-embed__component-name">API Endpoints</span>
+      <span class="lb-status-embed__component-status lb-status-embed__component-status--operational">Operational</span>
+    </div>
+  </div>
+
+  <div class="lb-status-embed__incidents" id="lb-status-incidents">
+    <!-- Populated dynamically if there are active incidents -->
+    <!-- Example resolved incident (remove from production): -->
+    <!--
+    <div class="lb-status-embed__incident lb-status-embed__incident--resolved">
+      <div class="lb-status-embed__incident-title">Jira Sync Delays</div>
+      <div class="lb-status-embed__incident-meta">Resolved · April 28, 2026 · Duration: 1h 14m</div>
+      <div class="lb-status-embed__incident-update">
+        <strong>Resolved:</strong> All Jira sync queues have cleared. We have deployed a fix and are monitoring.
+      </div>
+    </div>
+    -->
+  </div>
+</div>

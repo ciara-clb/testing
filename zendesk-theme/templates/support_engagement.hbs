@@ -1,0 +1,152 @@
+{{!--
+  SUPPORT ENGAGEMENT PAGE
+  =======================
+  This template is used for the dedicated "How to Engage with Support" article/section.
+  
+  To publish this content in Zendesk Guide:
+    1. Create a new article titled "How to Engage with LinearB Support"
+    2. Switch to HTML source mode in the article editor
+    3. Paste the HTML block below (between the HTML comment markers)
+    4. Publish the article — it will inherit all lb-* CSS from _linearb-custom.scss
+  
+  Recommended placement:
+    - Pin as a Promoted Article so it appears on the home page
+    - Link from the header nav as "Support Guidelines"
+    - Or create a dedicated section: "Working with Support"
+--}}
+
+{{!-- ═══════════════════════════════════════════════════════
+     PASTE THE FOLLOWING HTML INTO THE ZENDESK ARTICLE BODY
+     ═══════════════════════════════════════════════════════ --}}
+
+<!--
+<div class="lb-support-page">
+
+  <div class="lb-support-intro">
+    <p>All support requests must be submitted through this Zendesk portal. Issues reported only via email or mentioned during live working sessions will not be tracked as formal break/fix tickets and may not receive a timely response.</p>
+  </div>
+
+  <div class="lb-engage-grid lb-engage-grid--halves">
+
+    <div class="lb-engage-card lb-engage-card--primary">
+      <div class="lb-engage-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+      </div>
+      <div class="lb-engage-card__content">
+        <h3 class="lb-engage-card__title">Submit a Ticket — The Only Channel</h3>
+        <p class="lb-engage-card__desc">Every break/fix issue must have a Zendesk ticket. You are responsible for monitoring your open tickets and responding promptly to requests for information.</p>
+        <p class="lb-engage-card__desc">If we need to ask for missing details, <strong>the SLA clock pauses</strong> until you respond in the ticket.</p>
+        <div class="lb-engage-card__note">
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 16 16" fill="currentColor"><path d="M8 1a7 7 0 100 14A7 7 0 008 1zm0 1.5a5.5 5.5 0 110 11 5.5 5.5 0 010-11zM8 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 6zm0-2.5a.875.875 0 110 1.75A.875.875 0 018 3.5z"/></svg>
+          Your CSA and CSM are not responsible for the day-to-day tracking, triage, or resolution of break/fix tickets.
+        </div>
+      </div>
+    </div>
+
+    <div class="lb-engage-card lb-engage-card--important">
+      <div class="lb-engage-card__icon">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      </div>
+      <div class="lb-engage-card__content">
+        <h3 class="lb-engage-card__title">
+          <span class="lb-engage-card__title-flag">Important</span>
+          What We Need From You
+        </h3>
+        <p class="lb-engage-card__desc">To help us triage and resolve quickly, include everything relevant when you submit the ticket:</p>
+        <ul class="lb-engage-card__tips">
+          <li>Screenshots or screen recordings</li>
+          <li>Browser console output</li>
+          <li>Affected URLs</li>
+          <li>Links to Pull Requests or Merge Requests</li>
+          <li>Project management ticket IDs</li>
+          <li>Affected user identifiers</li>
+          <li>What you expected to happen vs. what you actually observed</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="lb-sla-section">
+    <div class="lb-sla-section__header">
+      <div>
+        <div class="lb-sla-section__title">Response Times</div>
+        <p class="lb-sla-section__subtitle">We categorize issues into four severity levels. Our team may adjust the severity based on observed impact after submission.</p>
+      </div>
+      <div class="lb-sla-hours-badge">
+        <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        <span>Support hours: <strong>9:00 am – 5:00 pm ET</strong>,<br/>Mon–Fri, excl. LinearB holidays</span>
+      </div>
+    </div>
+    <div class="lb-sla-table-wrap">
+      <table class="lb-sla-table lb-sla-table--full">
+        <thead>
+          <tr>
+            <th rowspan="2" style="width:140px">Severity</th>
+            <th rowspan="2">Definition &amp; Examples</th>
+            <th rowspan="2" style="width:130px">Response SLA</th>
+            <th class="lb-sla-table__col-plan" colspan="2">Plan</th>
+          </tr>
+          <tr>
+            <th class="lb-sla-table__col-plan-sub" style="width:145px">Essentials<br/><span class="lb-sla-table__col-note">9am–5pm EST</span></th>
+            <th class="lb-sla-table__col-plan-sub" style="width:145px">Enterprise<br/><span class="lb-sla-table__col-note">9am–5pm EST</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td rowspan="2"><span class="lb-priority lb-priority--critical">Severity 1<br/>Urgent</span></td>
+            <td rowspan="2">Business-critical operations completely halted with no existing workaround — e.g., platform outage, org-wide login issues, dashboards inaccessible.</td>
+            <td class="lb-sla-table__sla-type">First Response</td>
+            <td class="lb-sla-table__val">4 business hours</td>
+            <td class="lb-sla-table__val">3 business hours</td>
+          </tr>
+          <tr class="lb-sla-table__update-row">
+            <td class="lb-sla-table__sla-type">Update Frequency</td>
+            <td class="lb-sla-table__val">1 business day</td>
+            <td class="lb-sla-table__val">1 business day</td>
+          </tr>
+          <tr class="lb-sla-table__severity-start">
+            <td rowspan="2"><span class="lb-priority lb-priority--high">Severity 2<br/>High</span></td>
+            <td rowspan="2">Features broken or data incorrect for a large subset of users, potentially without a workaround — e.g., metrics wrong, git/PM data not loading, teams missing data.</td>
+            <td class="lb-sla-table__sla-type">First Response</td>
+            <td class="lb-sla-table__val">5 business hours</td>
+            <td class="lb-sla-table__val">4 business hours</td>
+          </tr>
+          <tr class="lb-sla-table__update-row">
+            <td class="lb-sla-table__sla-type">Update Frequency</td>
+            <td class="lb-sla-table__val">2 business days</td>
+            <td class="lb-sla-table__val">2 business days</td>
+          </tr>
+          <tr class="lb-sla-table__severity-start">
+            <td rowspan="2"><span class="lb-priority lb-priority--normal">Severity 3<br/>Normal</span></td>
+            <td rowspan="2">Limited impact with a workaround typically available — e.g., exclusion issues, single user issues, WorkerB issues.</td>
+            <td class="lb-sla-table__sla-type">First Response</td>
+            <td class="lb-sla-table__val">8 business hours</td>
+            <td class="lb-sla-table__val">6 business hours</td>
+          </tr>
+          <tr class="lb-sla-table__update-row">
+            <td class="lb-sla-table__sla-type">Update Frequency</td>
+            <td class="lb-sla-table__val">3 business days</td>
+            <td class="lb-sla-table__val">3 business days</td>
+          </tr>
+          <tr class="lb-sla-table__severity-start">
+            <td rowspan="2"><span class="lb-priority lb-priority--low">Severity 4<br/>Low</span></td>
+            <td rowspan="2">Little to no significant impact — e.g., "how-to" inquiries, minor UI inconsistencies, feature requests.</td>
+            <td class="lb-sla-table__sla-type">First Response</td>
+            <td class="lb-sla-table__val">1 business day</td>
+            <td class="lb-sla-table__val">8 business hours</td>
+          </tr>
+          <tr class="lb-sla-table__update-row">
+            <td class="lb-sla-table__sla-type">Update Frequency</td>
+            <td class="lb-sla-table__val">5 business days</td>
+            <td class="lb-sla-table__val">4 business days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="lb-sla-footer-note">All response times are measured during standard business hours only. Time outside these hours does not count toward response time targets.</p>
+  </div>
+
+</div>
+-->
+

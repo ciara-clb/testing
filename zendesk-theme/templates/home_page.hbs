@@ -1,0 +1,123 @@
+<h1 class="visibility-hidden">{{ help_center.name }}</h1>
+
+{{!-- Alert banner: hidden by default, shown via LinearBAlerts.show() in script.js --}}
+<div class="lb-alert-banner" id="lb-alert-banner" role="alert" aria-live="polite">
+  <div class="lb-alert-banner__inner">
+    <span class="lb-alert-banner__icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 16 16" fill="currentColor"><path d="M8.982 1.566a1.13 1.13 0 00-1.96 0L.165 13.233c-.457.778.091 1.767.98 1.767h13.713c.889 0 1.438-.99.98-1.767L8.982 1.566zM8 5c.535 0 .954.462.9.995l-.35 3.507a.553.553 0 01-1.1 0L7.1 5.995A.905.905 0 018 5zm.002 6a1 1 0 110 2 1 1 0 010-2z"/></svg>
+    </span>
+    <span class="lb-alert-banner__message" id="lb-alert-message"></span>
+    <a href="#" class="lb-alert-banner__cta" id="lb-alert-cta"></a>
+    <button class="lb-alert-banner__dismiss" aria-label="Dismiss" onclick="this.closest('.lb-alert-banner').removeAttribute('data-visible');">
+      <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M1 1l10 10M11 1L1 11"/></svg>
+    </button>
+  </div>
+</div>
+
+{{!-- Hero: background set in Guide > Customize > Images > homepage_background_image --}}
+<section id="main-content" class="section hero">
+  <div class="hero-inner">
+    <h2 class="lb-hero-title">How Can We Help?</h2>
+    <div class="lb-search-wrap">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" focusable="false" viewBox="0 0 12 12" class="lb-search-icon" aria-hidden="true">
+        <circle cx="4.5" cy="4.5" r="4" fill="none" stroke="currentColor"/>
+        <path stroke="currentColor" stroke-linecap="round" d="M11 11L7.5 7.5"/>
+      </svg>
+      {{search submit=true instant=false class='search search-full'}}
+    </div>
+  </div>
+</section>
+
+<div class="container">
+
+  {{!-- Status bar: populated by initStatusBar() in script.js if STATUS_API_URL is set --}}
+  <div class="lb-status-bar" id="lb-status-bar">
+    <div class="lb-status-bar__indicator lb-status-bar__indicator--operational" id="lb-status-indicator">
+      <span class="lb-status-bar__dot" aria-hidden="true"></span>
+      <span id="lb-status-label">All Systems Operational</span>
+    </div>
+    <a href="https://www.linearbstatus.com" target="_blank" rel="noopener" class="lb-status-bar__link">
+      View status page
+      <svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 12 12" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 2H2a1 1 0 00-1 1v7a1 1 0 001 1h7a1 1 0 001-1V7M7.5 1.5H10.5M10.5 1.5V4.5M10.5 1.5L5.5 6.5"/></svg>
+    </a>
+  </div>
+
+  {{!-- Category blocks --}}
+  <section class="section knowledge-base">
+    <h2 class="visibility-hidden">{{ t 'categories' }}</h2>
+    <section class="categories blocks">
+      <ul class="blocks-list">
+        {{#each categories}}
+          {{#if ../has_multiple_categories}}
+            <li class="blocks-item">
+              <a href='{{url}}' class="blocks-item-link">
+                <span class="blocks-item-icon" aria-hidden="true">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                </span>
+                <span class="blocks-item-title">{{name}}</span>
+                <span class="blocks-item-description">{{excerpt description}}</span>
+              </a>
+            </li>
+          {{else}}
+            {{#each sections}}
+              <li class="blocks-item">
+                <a href='{{url}}' class="blocks-item-link">
+                  <span class="blocks-item-icon" aria-hidden="true">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>
+                  </span>
+                  <span class="blocks-item-title">{{name}}</span>
+                  <span class="blocks-item-description">{{excerpt description}}</span>
+                </a>
+              </li>
+            {{/each}}
+          {{/if}}
+        {{/each}}
+      </ul>
+      {{pagination}}
+    </section>
+  </section>
+
+  {{!-- Promoted + recently viewed articles, two-column --}}
+  {{#if promoted_articles}}
+    <section class="section lb-articles-row">
+      <div class="lb-articles-col">
+        <h2 class="lb-articles-heading">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          {{t 'promoted_articles'}}
+        </h2>
+        <ul class="lb-article-list">
+          {{#each promoted_articles}}
+            <li class="lb-article-item">
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              <a href="{{url}}">{{title}}</a>
+            </li>
+          {{/each}}
+        </ul>
+      </div>
+      <div class="lb-articles-col">
+        <h2 class="lb-articles-heading">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          Recently viewed articles
+        </h2>
+        {{recent_articles}}
+      </div>
+    </section>
+  {{/if}}
+
+  {{!-- Recent activity --}}
+  <section class="section home-section activity">
+    {{#if settings.show_recent_activity}}{{recent_activity}}{{/if}}
+  </section>
+
+  {{!-- Community: hidden until ready. Remove {{#if false}} to enable. --}}
+  {{#if false}}
+    {{#if help_center.community_enabled}}
+      <section class="section home-section community">
+        <h2>{{t 'community'}}</h2>
+        {{#link 'community' class='community-link'}}{{t 'join_conversation'}}{{/link}}
+        <div class="community-image"></div>
+      </section>
+    {{/if}}
+  {{/if}}
+
+</div>
